@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        IMAGE_NAME = "iorp/django_demo"
+        IMAGE_NAME = "T1mafey/django_demo"
     }
     stages {
         stage("test") {
