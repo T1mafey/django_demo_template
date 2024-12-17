@@ -24,5 +24,17 @@ pipeline {
                     ]
             }
         }
+        stage("push") {
+            steps {
+                withCreditals(
+                    [
+                        usernamePassword(usernameVariable: 'LOGIN', passwordVariable: 'PASSWORD', creditalsId: 'chiv_docker_hub_token'
+                    ]
+                    ) {
+                        sh 'docker - login -u ${LOGIN} -p ${PASSWORD}'
+                        sh 'docker push ${IMAGE_NAME}:latest'
+                    }
+            }
+        }
     }
 }
