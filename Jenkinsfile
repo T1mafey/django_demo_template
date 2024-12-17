@@ -28,7 +28,7 @@ pipeline {
             steps {
                 withCreditals(
                     [
-                        usernamePassword(usernameVariable: 'LOGIN', passwordVariable: 'PASSWORD', creditalsId: 'chiv_docker_hub_token'
+                        usernamePassword(usernameVariable: 'LOGIN', passwordVariable: 'PASSWORD', creditalsId: 'chiv_docker_hub_token')
                     ]
                     ) {
                         sh 'docker - login -u ${LOGIN} -p ${PASSWORD}'
