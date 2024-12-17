@@ -26,7 +26,7 @@ pipeline {
         }
         stage("push") {
             steps {
-                withCreditals(
+                withCredentials(
                     [
                         usernamePassword(usernameVariable: 'LOGIN', passwordVariable: 'PASSWORD', creditalsId: 'chiv_docker_hub_token')
                     ]
