@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        IMAGE_NAME = "django_demo"
+        IMAGE_NAME = "chivil/devops21_task1"
     }
     stages {
         stage("test") {
