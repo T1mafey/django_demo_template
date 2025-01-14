@@ -3,4 +3,4 @@ services:
   backend:
     image: chivil/devops21_task1:latest
     ports:
-      - "8081:8099"
+      - "8099:8000"
