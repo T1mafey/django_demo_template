@@ -54,6 +54,7 @@ pipeline {
                     sh 'ssh -o StrictHostKeyChecking=no -i "${KEY_FILE}" ${USERNAME}@${SERVER_ADDRESS} docker compose -f ${PROJECT_NAME}/docker-compose.yaml up -d'
                     sh 'scp -o StrictHostKeyChecking=no -i "${KEY_FILE}" chivilev.prod.mshp-devops.com.conf ${USERNAME}@${SERVER_ADDRESS}:nginx'
                     sh 'ssh -o StrictHostKeyChecking=no -i "${KEY_FILE}" ${USERNAME}@${SERVER_ADDRESS} sudo systemctl reload nginx'
+                    sh 'ssh -o StrictHostKeyChecking=no -i "${KEY_FILE}" ${USERNAME}@${SERVER_ADDRESS} sudo certbot --nginx --non-interactive --agree-tos -m timachiv@gmail.com -d chivilev.prod.mshp-devops.com'
                 }
             }
         }
